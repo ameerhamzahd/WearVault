@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Image/logo.png" rel="icon">
+    <title>Wear Vault</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&arrivals=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <header class="fixed-top">
+        <nav>
+            <div class="nav-logo">
+                <a href=""><img src="Image/logo.png" width="60" height="25" alt=""> Wear Vault</a>
+            </div>
+
+            <div class="nav-link">
+                <ul>
+                    <li><a class="{% if request.path == url %} active {% endif %}" href="{{url}}">Home</a></li>
+                    <li><a class="{% if request.path == '/shop/' %} active {% endif %}" href="/shop/">Shop</a></li>
+                    <li class="dropdown"><a href="">Collections
+                            <svg width="20" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></a>
+                        <ul>
+                            <li><a href="{% url 'shop_category' 'drop-shoulders' %}">Drop Shoulders</a></li>
+                            <li><a href="{% url 'shop_category' 'baggy-joggers' %}">Baggy Joggers</a></li>
+                            <li><a href="{% url 'shop_category' 'baggy-shirts' %}">Baggy Shirts</a></li>
+                            <li><a href="{% url 'shop_category' 'cargo-pants' %}">Cargo Pants</a></li>
+                            <li><a href="{% url 'shop_category' 'head-wear' %}">Head Wear</a></li>
+                            <li><a href="{% url 'shop_category' 'baggy-shorts' %}">Baggy Shorts</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="{% if request.path == url %} active {% endif %}" href="{{url}}">About Us</a></li>
+                    <li><a class="{% if request.path == url %} active {% endif %}" href="{{url}}">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-bar">
+
+                <div class="nav-search">
+                    <a id="search-icon">
+                        <svg width="25" height="25" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.5 21C15.7467 21 20 16.5228 20 11C20 5.47715 15.7467 1 10.5 1C5.25329 1 1 5.47715 1 11C1 16.5228 5.25329 21 10.5 21Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M26 27L18 19" stroke="black" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+
+                    <div id="search-panel" class="search-panel">
+                        <div class="search-header">
+                            <h4><svg width="25" height="25" viewBox="0 0 27 28" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.5 21C15.7467 21 20 16.5228 20 11C20 5.47715 15.7467 1 10.5 1C5.25329 1 1 5.47715 1 11C1 16.5228 5.25329 21 10.5 21Z"
+                                        stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M26 27L18 19" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>Search</h4>
+                            <button id="search-close">✕</button>
+                        </div>
+
+                        <h2>What Are You Looking For?</h2>
+                        <div class="search-bar">
+                            <form action="">
+                                <input type="text" placeholder="Type to search..." />
+                                <button>Search</button>
+                            </form>
+                        </div>
+
+                        <h3>Our Categories</h3>
+                        <div class="search-content">
+                            <div class="search-category">
+                                <img src="Image/Drop Shoulder/IMG_0001.JPG" width="180" height="200">
+                                <h2>Drop Shoulder</h2>
+                            </div>
+                            <div class="search-category">
+                                <img src="Image/Joggers/IMG_0002.JPG" width="180" height="200">
+                                <h2>Baggy Joggers</h2>
+                            </div>
+                            <div class="search-category">
+                                <img src="Image/Shirts/IMG_9951.JPG" width="180" height="200">
+                                <h2>Baggy Shirts</h2>
+                            </div>
+                            <div class="search-category">
+                                <img src="Image/Cargo Pants/IMG_9947.JPG" width="180" height="200">
+                                <h2>Cargo Pants</h2>
+                            </div>
+                            <div class="search-category">
+                                <img src="Image/Head Wear/IMG_9946.JPG" width="180" height="200">
+                                <h2>Head Wear</h2>
+                            </div>
+                            <div class="search-category">
+                                <img src="Image/Shorts/IMG_9950.JPG" width="180" height="200">
+                                <h2>Baggy Shorts</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-log" id="nav-log">
+                    <a href="/auth/logout/" id="log-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                            <path fill-rule="evenodd"
+                                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                        </svg>
+                    </a>
+
+                    <a id="log-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                        </svg>
+                    </a>
+
+                </div>
+
+                <div class="nav-cart">
+                    <a id="cart-icon"><button type="button" id="cart-button" data-container="body" data-toggle="popover"
+                            data-placement="bottom" data-html="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-cart" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                            </svg><span id="cart">0</span></button>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="nav-menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </div>
+
+            <div id="nav-menu" class="nav-menu">
+
+                <div class="nav-menu-bar">
+                    <div class="nav-search">
+                        <a id="search-menu-icon">
+                            <svg width="25" height="25" viewBox="0 0 27 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.5 21C15.7467 21 20 16.5228 20 11C20 5.47715 15.7467 1 10.5 1C5.25329 1 1 5.47715 1 11C1 16.5228 5.25329 21 10.5 21Z"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M26 27L18 19" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="nav-log">
+                        <a id="log-menu-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="nav-cart">
+                        <a id="cart-menu-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-cart" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                            </svg>
+                            <span>2</span>
+                        </a>
+                    </div>
+
+                    <span class="nav-menu-remove">✕</span>
+                </div>
+
+                <div class="nav-menu-link">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Drop Shoulders</a></li>
+                        <li><a href="">Baggy Joggers</a></li>
+                        <li><a href="">Baggy Shirts</a></li>
+                        <li><a href="">Cargo Pants </a></li>
+                        <li><a href="">Head Wear</a></li>
+                        <li><a href="">Baggy Shorts</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="shop">
+        <div class="shop-title">
+            <h3>Check Our Products</h3>
+            <p>Discover our collection, curated to bring you the perfect blend of style, comfort, and quality. Explore
+                the trendiest fashion items tailored just for you!</p>
+        </div>
+
+        <div class="shop">
+            <div class="shop-product">
+                <div class="shop-product-image-wrapper">
+                    <div class="shop-product-image">
+                        <img src="Image/Drop Shoulder/IMG_0004.JPG" alt="Not Found" />
+                    </div>
+
+                    <div class="shop-product-button">
+                        <a href="/shop/product-details/{{ i.id }}/">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                                    <path
+                                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shop-product-info">
+                    <h3 id="namepr{{i.id}}">{{i.product_name}}</h3>
+                    <p>$ <span id="pricepr{{i.id}}"> {{i.product_price}}</span></p>
+                </div>
+            </div>
+
+            <div class="shop-product">
+                <div class="shop-product-image-wrapper">
+                    <div class="shop-product-image">
+                        <img src="Image/Drop Shoulder/IMG_0004.JPG" alt="Not Found" />
+                    </div>
+
+                    <div class="shop-product-button">
+                        <a href="/shop/product-details/{{ i.id }}/">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                                    <path
+                                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shop-product-info">
+                    <h3 id="namepr{{i.id}}">{{i.product_name}}</h3>
+                    <p>$ <span id="pricepr{{i.id}}"> {{i.product_price}}</span></p>
+                </div>
+            </div>
+
+            <div class="shop-product">
+                <div class="shop-product-image-wrapper">
+                    <div class="shop-product-image">
+                        <img src="Image/Drop Shoulder/IMG_0004.JPG" alt="Not Found" />
+                    </div>
+
+                    <div class="shop-product-button">
+                        <a href="/shop/product-details/{{ i.id }}/">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                                    <path
+                                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shop-product-info">
+                    <h3 id="namepr{{i.id}}">{{i.product_name}}</h3>
+                    <p>$ <span id="pricepr{{i.id}}"> {{i.product_price}}</span></p>
+                </div>
+            </div>
+
+            <div class="shop-product">
+                <div class="shop-product-image-wrapper">
+                    <div class="shop-product-image">
+                        <img src="Image/Drop Shoulder/IMG_0004.JPG" alt="Not Found" />
+                    </div>
+
+                    <div class="shop-product-button">
+                        <a href="/shop/product-details/{{ i.id }}/">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                                    <path
+                                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shop-product-info">
+                    <h3 id="namepr{{i.id}}">{{i.product_name}}</h3>
+                    <p>$ <span id="pricepr{{i.id}}"> {{i.product_price}}</span></p>
+                </div>
+            </div>
+
+            <div class="shop-product">
+                <div class="shop-product-image-wrapper">
+                    <div class="shop-product-image">
+                        <img src="Image/Drop Shoulder/IMG_0004.JPG" alt="Not Found" />
+                    </div>
+
+                    <div class="shop-product-button">
+                        <a href="/shop/product-details/{{ i.id }}/">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                                    <path
+                                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shop-product-info">
+                    <h3 id="namepr{{i.id}}">{{i.product_name}}</h3>
+                    <p>$ <span id="pricepr{{i.id}}"> {{i.product_price}}</span></p>
+                </div>
+            </div>
+
+            <div class="shop-product">
+                <div class="shop-product-image-wrapper">
+                    <div class="shop-product-image">
+                        <img src="Image/Drop Shoulder/IMG_0004.JPG" alt="Not Found" />
+                    </div>
+
+                    <div class="shop-product-button">
+                        <a href="/shop/product-details/{{ i.id }}/">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                                    <path
+                                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shop-product-info">
+                    <h3 id="namepr{{i.id}}">{{i.product_name}}</h3>
+                    <p>$ <span id="pricepr{{i.id}}"> {{i.product_price}}</span></p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="quick-view">
+        <div class="quick-view">
+            <div class="quick-view-images">
+                <div class="quick-view-images-top">
+                    <div class="quick-view-images-top-display">
+                        <img id="imagepr{{product.id}}" src="Image/Cargo Pants/IMG_9947.JPG"
+                            alt="{{ product.product_name }}">
+                    </div>
+
+                    <div class="quick-view-images-top-display">
+                        <img src="Image/Cargo Pants/IMG_9952.JPG" alt="{{ product.product_name }}">
+                    </div>
+
+                </div>
+
+                <div class="quick-view-images-bottom">
+                    <div class="quick-view-images-bottom-display">
+                        <img src="Image/Cargo Pants/IMG_9961.JPG" alt="{{ product.product_name }}">
+                    </div>
+
+                    <div class="quick-view-images-bottom-display">
+                        <img src="Image/Cargo Pants/IMG_9979.JPG" alt="{{ product.product_name }}">
+                    </div>
+
+                    <div class="quick-view-images-bottom-display">
+                        <img src="Image/Cargo Pants/IMG_9982.JPG" alt="{{ product.product_name }}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-view-info">
+                <h5 class="card-title mt-2" id="namepr{{product.id}}">Regular Baggy Pants</h5>
+                <h6 class="card-title mb-3">
+                    $ <span id="pricepr{{product.id}}">10.00</span>
+                </h6>
+                <p class="quick-view-info-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea facere consequatur consequuntur, a nisi? Natus voluptatibus enim dolorum incidunt rerum perspiciatis officia? Maiores, delectus.</p>
+
+                <div class="quick-view-info-option">
+                    <div class="quick-view-info-option-section">
+                        <p>Color</p>
+                        <select id="color">
+                            <option value="">Choose an option</option>
+                            {% for color in colors %}
+                            <option value="{{ color }}">{{ color }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="quick-view-info-option-section">
+                        <p>Size</p>
+                        <select id="size">
+                            <option value="">Choose an option</option>
+                            {% for size in sizes %}
+                            <option value="{{ size }}">{{ size }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="quick-view-info-cart">
+                    <div class="quick-view-info-cart-quantity">
+                        <button id="decreasepr{{product.id}}"
+                            class="quick-view-info-cart-quantity-button"><span>-</span></button>
+                        <input type="number" class="quantity" id="quantitypr{{product.id}}" value="1" min="1">
+                        <button id="increasepr{{product.id}}"
+                            class="quick-view-info-cart-quantity-button"><span>+</span></button>
+                    </div>
+
+                    <span id="divpr{{product.id}}" class="divpr">
+                        <button id="pr{{product.id}}" class="cart">
+                            ADD TO CART <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </span>
+                </div>
+
+                <p class="quick-view-info-features">SKU: <span>{{ product.id }}</span></p>
+                <p class="quick-view-info-features">Category: <span>GSM180</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-logo">
+                <a href="#home"><img src="Image/logo.png" alt="" width="100" height="30"></a>
+            </div>
+            <div class="footer-link">
+                <ul class="d-flex justify-content-center">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#category">Category</a></li>
+                    <li><a href="#arrivals">Arrivals</a></li>
+                    <li><a href="#trending">Trending</a></li>
+                    <li><a href="#process">About Us</a></li>
+                    <li><a href="#faq">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-icon">
+                <a href="#facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#youtube"><i class="bi bi-youtube"></i></a>
+                <a href="#twitter"><i class="bi bi-twitter"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 <span> wear vault</span> | all rights reseved by <span>wear vault</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{% static '/assets/js/script.js' %}"></script>
+</body>
+
+</html>
