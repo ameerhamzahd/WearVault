@@ -390,8 +390,8 @@ header nav .nav-menu-bar a svg:hover{
 /*----------------------------------------- shop -----------------------------------------*/
 
 #shop .shop{
-    grid-template-columns: repeat(1, 1fr);    
-    column-gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 40px;    
 }
 
 /*----------------------------------------- quick view -----------------------------------------*/
@@ -751,8 +751,7 @@ header nav .nav-menu-bar a svg:hover{
 /*----------------------------------------- shop -----------------------------------------*/
 
 #shop .shop{
-    grid-template-columns: repeat(2, 0.25fr);
-    row-gap: 40px;    
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 40px;
 }
 
