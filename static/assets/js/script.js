@@ -51,6 +51,16 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     };
 
+    /*----------------------------------------- cart -----------------------------------------*/
+
+    document.getElementById("cart-icon").addEventListener("click", function () {
+        document.getElementById("cart-panel").classList.toggle("cart-open");
+    });
+
+    document.getElementById("cart-close").addEventListener("click", function () {
+        document.getElementById("cart-panel").classList.remove("cart-open");
+    });
+
     /*----------------------------------------- log -----------------------------------------*/
 
     document.getElementById("log-icon").addEventListener("click", function () {
@@ -96,4 +106,16 @@ document.addEventListener("DOMContentLoaded", function (){
     document.getElementById("reset-link-close").addEventListener("click", function () {
         document.getElementById("reset-link-panel").classList.remove("reset-link-open");
     });
+
+    /*----------------------------------------- banner -----------------------------------------*/
+
+    const banners = document.querySelectorAll(".banner");
+    let currentIndex = 0;
+    
+    function showNextBanner() {
+        banners[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % banners.length;
+        banners[currentIndex].classList.add("active");
+    }
+    setInterval(showNextBanner, 5000);
 });

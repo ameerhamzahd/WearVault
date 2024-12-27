@@ -166,11 +166,89 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                           <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                         </svg>
+                        <span>2</span>
                     </a>
+                    <div id="cart-panel" class="cart-panel">
+                        <div class="cart-header">
+                            <h2><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                </svg>Shopping cart
+                            </h2>
+                            <span id="cart-close" class="cart-close">✕</span>
+                        </div>
+                        <div class="cart-content">
+                            <div class="cart-item">
+                                <img src="/static/images/item-1.jpg" class="cart-item-image">
+                                <div class="cart-item-details">
+                                    <p class="cart-item-name">Drop Shoulder</p>
+                                    <p class="cart-item-quantity">1 x 1350.00</p>
+                                    <p class="cart-item-price">$1350</p>
+                                </div>
+                                <span class="cart-remove-item">✕</span>
+                            </div>
+                            <div class="cart-item">
+                                <img src="/static/images/item-2.jpg" class="cart-item-image">
+                                <div class="cart-item-details">
+                                    <p class="cart-item-name">Drop Shoulder</p>
+                                    <p class="cart-item-quantity">1 x 1350.00</p>
+                                    <p class="cart-item-price">$1350</p>
+                                </div>
+                                <span class="cart-remove-item">✕</span>
+                            </div>
+                        </div>
+                        <div class="cart-footer">
+                            <h5>Total: $ 2700.00</h5>
+                            <button>Checkout</button>
+                        </div>
+                    </div> 
                 </div>                       
             </div>
         </nav>
     </header>
+
+    <section id="home">
+        <div class="home">
+            <div class="banner active">
+                <div class="banner-info">
+                    <h2>Chase your passion for fashion</h2>
+                    <h1>Discover Perfect Style<br> at Unbeatable Prices</h1>
+                    <a href="" class="banner-explore"><button>Explore now</button></a>
+                </div>
+                <div class="banner-image">
+                    <img src="/static/images/banner-1.JPG" alt="" width="400" height="500">
+                    <div class="banner-image-info">
+                        <h1>Crafted<br> Elegance</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="banner-info">
+                    <h2>Chase your passion for fashion</h2>
+                    <h1>Stay Ahead of the Trends<br>with Our New Collections</h1>
+                    <a href="" class="banner-explore"><button>Explore now</button></a>
+                </div>
+                <div class="banner-image">
+                    <img src="/static/images/banner-2.JPG" alt="" width="400" height="500">
+                    <div class="banner-image-info">
+                        <h1>Exclusive<br>Selections</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="banner-info">
+                    <h2>Chase your passion for fashion</h2>
+                    <h1>Elevate Your Wardrobe<br> with Trendy New Arrivals</h1>
+                    <a href="" class="banner-explore"><button>Explore now</button></a>
+                </div>
+                <div class="banner-image">
+                    <img src="/static/images/banner-3.JPG" alt="" width="400" height="500">
+                    <div class="banner-image-info">
+                        <h1>Distinctive<br>Collections</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="/static/assets/js/script.js"></script>
 </body>
