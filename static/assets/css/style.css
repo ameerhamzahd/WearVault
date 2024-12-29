@@ -690,3 +690,131 @@ nav {
 .banner-explore button:hover{
     transform: scale(1.05);
 }
+
+
+/* --------------------------------------------- category --------------------------------------------- */
+
+
+.category {
+    margin: 5em;
+}
+
+.category-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.category-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-row {
+    display: grid;
+    grid-column: inherit;
+    grid-template-columns: repeat(3, 0fr);
+    gap: 50px;
+    text-align: center;
+}
+
+.category-list {
+    width: 300px;
+    height: 550px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-list-img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-list-img img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transition: all 0.6s;
+    cursor: pointer;
+}
+
+.category-list img:hover {
+    transform: scale(1.2);
+}
+
+.category-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px 25px 10px;
+    height: 150px;
+}
+
+.category-info h3 {
+    font-size: 20px;
+    font-weight: 550;
+    width: 230px;
+}
+
+.category-info p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+/*----------------------------------------- footer -----------------------------------------*/
+
+
+footer{
+    margin-top: 100px;
+    padding: 50px 36px 0px 36px;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.1);
+    background-color: #bab3a6;
+}
+
+.footer{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.footer-logo img{
+    filter: invert(100%);
+}
+
+.footer .footer-link ul{
+    gap: 40px;
+    font-size: 20px;
+    padding: 30px;
+}
+
+.footer .footer-link a{
+    text-decoration: none;
+}
+
+.footer-icon{
+    padding: 5px 0px;
+}
+
+.footer-icon i{
+    padding: 0px 10px;
+    font-size: 25px;
+}
+
+.footer-copyright{
+    padding-top: 30px;
+}
+
+.footer-copyright p{
+    color: #fff;
+    font-size: 16px;
+    margin: 0 -36px 0 -36px;
+    padding: 10px;
+    background: #2A2A28;
+}
